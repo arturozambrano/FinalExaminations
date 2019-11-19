@@ -1,10 +1,8 @@
 Class {
-	#name : #SavingAccount,
+	#name : #Bank,
 	#superclass : #Object,
 	#instVars : [
-		'customer',
-		'debits',
-		'credits'
+		'accounts'
 	],
 	#category : #Nov2019
 }
