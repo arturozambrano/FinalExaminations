@@ -6,7 +6,7 @@ Class {
 
 { #category : #operations }
 PowerBuyers >> applyPrize: anAccount [
-	anAccount prize: IVAReturn new
+	IVAReturn new applyTo:anAccount.
 ]
 
 { #category : #operations }
