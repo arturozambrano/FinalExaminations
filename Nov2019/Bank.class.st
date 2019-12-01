@@ -8,6 +8,11 @@ Class {
 }
 
 { #category : #actions }
+Bank >> addAccount: anAccount [
+ accounts add:anAccount
+]
+
+{ #category : #actions }
 Bank >> computePrizes [
 	| customersPerPolicy |
 	customersPerPolicy := Dictionary new.
@@ -22,6 +27,11 @@ Bank >> computePrizes [
 					(customersPerPolicy at: p ifAbsentPut: OrderedCollection new)
 						add: account customer ] ].
 	self report: customersPerPolicy
+]
+
+{ #category : #initialization }
+Bank >> initialize [
+	accounts := OrderedCollection new
 ]
 
 { #category : #actions }
