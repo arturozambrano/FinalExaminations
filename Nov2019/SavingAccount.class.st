@@ -42,6 +42,11 @@ SavingAccount >> debitsForLastMonth [
 	^ self sumForLastMonth: debits.
 ]
 
+{ #category : #queries }
+SavingAccount >> depositsInLastMonth [
+	^ self sumForLastMonth: (credits select: [ :d | d isDeposit ])
+]
+
 { #category : #initialization }
 SavingAccount >> initialize [
 	benefits := OrderedCollection new.
@@ -62,7 +67,7 @@ SavingAccount >> lastDebit [
 { #category : #actions }
 SavingAccount >> registerDeposit: amount description: aString date: aDate [
 	credits
-		add: (Credit newAmount: amount description: aString date: aDate)
+		add: (Deposit newAmount: amount description: aString date: aDate)
 ]
 
 { #category : #actions }
@@ -77,13 +82,14 @@ SavingAccount >> registerPurchase: amount description: aString date: aDate [
 ]
 
 { #category : #private }
-SavingAccount >> sumForLastMonth:aCollection [
-	^ ((aCollection
+SavingAccount >> sumForLastMonth: aCollection [
+	aCollection ifEmpty: [ ^ 0 ].
+	^ (aCollection
 		select: [ :c | c date between: Date today - 30 days and: Date today ])
-		collect: #amount) sum
+		sum: [ :m | m amount ]
 ]
 
-{ #category : #accessing }
+{ #category : #queries }
 SavingAccount >> totalBuysForLastMonth [
 	^ self sumForLastMonth: (debits select: [ :d | d isPurchase ])
 ]

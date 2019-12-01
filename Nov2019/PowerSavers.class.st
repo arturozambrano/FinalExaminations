@@ -7,11 +7,12 @@ Class {
 { #category : #operations }
 PowerSavers >> applyPrize: anAccount [
 	anAccount
-		registerCredit: (anAccount creditsForLastMonth - anAccount debitsForLastMoth) * 0.015
+		registerDeposit: (anAccount creditsForLastMonth - anAccount debitsForLastMonth) * 0.015
 		description: 'Prize Policy 3'
+		date: Date today
 ]
 
 { #category : #operations }
 PowerSavers >> doesApplyPrize: anAccount [
-	^ (anAccount creditsForLast > anAccount debitsForLastMonth) * 2
+	^ anAccount creditsForLastMonth > (anAccount debitsForLastMonth * 2)
 ]

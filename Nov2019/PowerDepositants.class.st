@@ -7,8 +7,9 @@ Class {
 { #category : #operations }
 PowerDepositants >> applyPrize: anAccount [
 	^ anAccount
-		registerCredit: anAccount depositsInLastMonth * 0.01
+		registerDeposit: anAccount depositsInLastMonth * 0.01
 		description: 'Prize policy2'
+		date: Date today
 ]
 
 { #category : #operations }
