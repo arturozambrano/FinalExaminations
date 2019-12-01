@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'name'
 	],
-	#category : #Nov2019
+	#category : #'Nov2019-Model'
 }
 
 { #category : #accessing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #PowerDepositants,
 	#superclass : #PrizePolicy,
-	#category : #Nov2019
+	#category : #'Nov2019-Model'
 }
 
 { #category : #operations }

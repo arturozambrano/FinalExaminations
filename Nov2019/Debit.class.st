@@ -1,5 +1,5 @@
 Class {
 	#name : #Debit,
 	#superclass : #AccountMovement,
-	#category : #Nov2019
+	#category : #'Nov2019-Model'
 }

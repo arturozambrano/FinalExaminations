@@ -6,7 +6,7 @@ Class {
 		'debits',
 		'credits'
 	],
-	#category : #Nov2019
+	#category : #'Nov2019-Model'
 }
 
 { #category : #acccessing }
@@ -27,6 +27,14 @@ SavingAccount >> customer: anObject [
 { #category : #acccessing }
 SavingAccount >> deditsForLastMonth [
 	^ self sumForLastMonth: debits.
+]
+
+{ #category : #actions }
+SavingAccount >> registerCredit: amount descripton: aString [
+]
+
+{ #category : #actions }
+SavingAccount >> registerDebit: amount descripton: aString [
 ]
 
 { #category : #private }

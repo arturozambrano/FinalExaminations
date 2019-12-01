@@ -1,5 +1,5 @@
 Class {
 	#name : #IVAReturn,
 	#superclass : #Object,
-	#category : #Nov2019
+	#category : #'Nov2019-Model'
 }
